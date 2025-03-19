@@ -3,7 +3,7 @@ import argparse
 from gen_blog_text import generate_blog_from_ingredients
 from md_to_html import convert_markdown_to_html
 
-def main():
+def create_blog_html_usecase():
     parser = argparse.ArgumentParser(description="食材リストからブログ記事を生成し、HTMLに変換するツール")
     parser.add_argument("--ingredients", nargs="+", help="食材名のリスト", required=True)
     parser.add_argument("--api-key", help="OpenAI APIキー (設定されていない場合は環境変数から読み込みます)")
@@ -22,4 +22,4 @@ def main():
     
 
 if __name__ == "__main__":
-    main()
+    create_blog_html_usecase()

@@ -16,11 +16,15 @@
 
 # サンプルコマンド
 
-## main
-`python src/main.py --ingredients じゃがいも+たまねぎ+人参+豚肉`
+## ユースケース
 
-## textのHTML変換
+### ブログhtml作成
+`python src/create_blog_html_usecase.py --ingredients じゃがいも+たまねぎ+人参+豚肉+トマト`
+
+## モジュール
+
+### textのHTML変換
 `python src/md_to_html.py TestData/sample-blog.txt ./public/index.html`
 
-## ブログ文章の生成
+### ブログ文章の生成
 `python src/gen_blog_text.py --ingredients じゃがいも+たまねぎ+人参+豚肉`
