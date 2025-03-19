@@ -2,7 +2,7 @@ import markdown
 import sys
 from pathlib import Path
 
-def convert_markdown_to_html(markdown_content, output_file=None):
+def convert_markdown_to_html(markdown_content: str, output_file=None) -> str:
     """
     Markdownコンテンツを受け取り、HTMLに変換します
     

@@ -3,7 +3,7 @@ import argparse
 import json
 from openai import OpenAI
 
-def generate_blog_from_ingredients(ingredients_list, api_key=None):
+def generate_blog_from_ingredients(ingredients_list, api_key=None) -> str:
     """
     食材のリストからOpenAI APIを使用してブログ記事を生成する関数
     

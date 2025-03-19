@@ -16,6 +16,9 @@
 
 # サンプルコマンド
 
+## main
+`python src/main.py --ingredients じゃがいも+たまねぎ+人参+豚肉`
+
 ## textのHTML変換
 `python src/md_to_html.py TestData/sample-blog.txt ./public/index.html`
 
