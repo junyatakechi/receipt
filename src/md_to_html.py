@@ -93,7 +93,7 @@ def main():
         except Exception as e:
             print(f"エラーが発生しました: {e}")
     else:
-        print("使用方法: python md_to_html.py input.md [output.html]")
+        print("引数が足りません。")
 
 if __name__ == "__main__":
     main()
