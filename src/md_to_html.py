@@ -13,9 +13,19 @@ def convert_markdown_to_html(markdown_content: str, output_file=None) -> str:
     Returns:
         str: HTMLコンテンツ（output_fileが指定されていない場合）
     """
+    # マークダウンの前後にある可能性のあるバッククォート(```)を削除
+    cleaned_content = markdown_content.strip()
+    if cleaned_content.startswith("```") and cleaned_content.endswith("```"):
+        # 最初と最後の```を削除
+        cleaned_content = cleaned_content[3:].strip()
+        if cleaned_content.startswith("markdown"):
+            cleaned_content = cleaned_content[8:].strip()
+        # 最後の```を削除
+        cleaned_content = cleaned_content[:-3].strip()
+    
     # Markdownを拡張機能付きでHTMLに変換
     html = markdown.markdown(
-        markdown_content,
+        cleaned_content,
         extensions=['extra', 'nl2br', 'sane_lists']
     )
     
