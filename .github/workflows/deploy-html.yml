@@ -10,7 +10,7 @@ on:
 # 同時実行を許可する
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 # 必要な権限を設定
 permissions:
@@ -25,17 +25,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      # GitHub Pagesの設定
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v4
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./public
-          destination: ./_site
+      
+      # 単純にpublicフォルダをそのまま使用（Jekyllビルドをスキップ）
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site
+          path: ./public
 
   # デプロイジョブ
   deploy:
